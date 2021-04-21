@@ -1,6 +1,7 @@
 package com.example.dotify
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ericchee.songdataprovider.Song
@@ -8,7 +9,7 @@ import com.example.dotify.databinding.ItemSongBinding
 
 class SongListAdapter (private var listOfSongs: List<Song>): RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
 
-    var onSongClickListener: (song: Song) -> Unit = {_ -> }
+    var onSongClickListener: (song: Song) -> Unit = { _ -> }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
         val binding = ItemSongBinding.inflate(LayoutInflater.from(parent.context))

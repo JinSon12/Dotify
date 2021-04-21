@@ -3,6 +3,7 @@ package com.example.dotify
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
@@ -36,6 +37,8 @@ class SongListActivity : AppCompatActivity() {
                 selectedSong = song
 
                 minPlayerText.text = getString(R.string.miniplayer_song_info, song.title, song.artist)
+
+                miniplayer.visibility = View.VISIBLE
 
             }
 

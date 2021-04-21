@@ -75,8 +75,6 @@ class PlayerActivity : AppCompatActivity() {
 
     fun playClicked(view: View) {
         curPlayCount++
-
-//        var curNumString = curNum.toString()
         tvPlayCount.text = "played $curPlayCount times "
     }
 

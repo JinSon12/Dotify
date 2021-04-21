@@ -37,6 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/grey"
         android:paddingHorizontal="10dp"
+        android:visibility="gone"
         >
 
         <TextView
