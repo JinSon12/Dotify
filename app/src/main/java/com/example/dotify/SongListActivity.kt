@@ -26,6 +26,13 @@ class SongListActivity : AppCompatActivity() {
             // the recyclerView's adapter should be PeopleAdapter(people) or val adapter
             rvSongList.adapter = adapter
 
+            adapter.onSongClickListener = { song: Song ->
+                val minPlayerText = tvSongTitle
+
+                minPlayerText.text = getString(R.string.miniplayer_song_info, song.title, song.artist)
+
+            }
+
             btnRefresh.setOnClickListener {
                 adapter.updateSongList(listofSong.toMutableList().shuffled())
 

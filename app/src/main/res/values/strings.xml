@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Dotify</string>
     <string name="change_user_text">Apply</string>
+    <string name="miniplayer_song_info">%s - %s</string>
 </resources>
