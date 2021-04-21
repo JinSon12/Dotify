@@ -1,13 +1,22 @@
 package com.example.dotify
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
+import com.ericchee.songdataprovider.Song
 import kotlin.random.Random
 
-class MainActivity : AppCompatActivity() {
+fun navigateToPlayerActivity(context: Context, song: Song) {
+    var intent = Intent(context, PlayerActivity::class.java)
+
+    context.startActivity(intent)
+}
+
+class PlayerActivity : AppCompatActivity() {
     private lateinit var tvPlayCount: TextView
     private lateinit var btnChangeUser: Button
     private val randomNum = Random.nextInt(10, 50)

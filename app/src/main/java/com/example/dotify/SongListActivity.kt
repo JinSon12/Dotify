@@ -31,6 +31,8 @@ class SongListActivity : AppCompatActivity() {
 
                 minPlayerText.text = getString(R.string.miniplayer_song_info, song.title, song.artist)
 
+                navigateToPlayerActivity(this@SongListActivity, song)
+
             }
 
             btnRefresh.setOnClickListener {
