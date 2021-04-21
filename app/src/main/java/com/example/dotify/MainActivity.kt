@@ -11,16 +11,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvPlayCount: TextView
     private lateinit var btnChangeUser: Button
     private val randomNum = Random.nextInt(10, 50)
+    var curPlayCount = randomNum
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         tvPlayCount = findViewById(R.id.tvPlayCount)
-        tvPlayCount.text = randomNum.toString()
+
+        tvPlayCount.text = "played $randomNum times"
+
 
         btnChangeUser = findViewById(R.id.btnChangeUser)
-
 
         btnChangeUser.setOnClickListener {
             val btnText = btnChangeUser.text.toString()
@@ -43,10 +45,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun playClicked(view: View) {
-        var curNum = tvPlayCount.text.toString().toInt()
-        curNum++
-        var curNumString = curNum.toString()
-        tvPlayCount.text = "$curNumString plays"
+        curPlayCount++
+
+//        var curNumString = curNum.toString()
+        tvPlayCount.text = "played $curPlayCount times "
     }
 
     fun changeUserClicked(btnText: String) {
