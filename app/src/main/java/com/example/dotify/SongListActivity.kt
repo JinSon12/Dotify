@@ -14,7 +14,7 @@ class SongListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_song_list)
 
-        this.setTitle("All Songs")
+        this.title = "All Songs"
 
         val listofSong: List<Song> = SongDataProvider.getAllSongs()
 

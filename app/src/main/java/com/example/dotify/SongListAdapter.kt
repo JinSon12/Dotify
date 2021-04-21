@@ -25,7 +25,7 @@ class SongListAdapter (private var listOfSongs: List<Song>): RecyclerView.Adapte
         with(holder.binding) {
             tvSongName.text = song.title
             tvArtist.text = song.artist
-            ivProfilepic.setImageResource(song.smallImageID)
+            ivSmallAlbumPic.setImageResource(song.smallImageID)
 
             root.setOnClickListener{
                 onSongClickListener(song)
