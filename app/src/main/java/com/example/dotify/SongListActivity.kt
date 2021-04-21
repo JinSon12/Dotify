@@ -1,5 +1,6 @@
 package com.example.dotify
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -18,6 +19,9 @@ class SongListActivity : AppCompatActivity() {
 
         val binding = ActivitySongListBinding.inflate(layoutInflater).apply { setContentView(root)}
 
+        var selectedSong : Song? = null
+
+
 
 
         with(binding) {
@@ -29,16 +33,27 @@ class SongListActivity : AppCompatActivity() {
             adapter.onSongClickListener = { song: Song ->
                 val minPlayerText = tvSongTitle
 
+                selectedSong = song
+
                 minPlayerText.text = getString(R.string.miniplayer_song_info, song.title, song.artist)
 
-                navigateToPlayerActivity(this@SongListActivity, song)
+            }
 
+            miniplayer.setOnClickListener {
+
+                val selectedSong = selectedSong
+
+                if(selectedSong != null) {
+                    navigateToPlayerActivity(this@SongListActivity, selectedSong)
+                }
             }
 
             btnRefresh.setOnClickListener {
                 adapter.updateSongList(listofSong.toMutableList().shuffled())
 
             }
+
+
         }
 
     }

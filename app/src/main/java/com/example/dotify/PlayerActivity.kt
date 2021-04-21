@@ -8,10 +8,19 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import com.ericchee.songdataprovider.Song
+import com.example.dotify.databinding.ActivityMainBinding
 import kotlin.random.Random
+
+private const val SONG_KEY = "song"
 
 fun navigateToPlayerActivity(context: Context, song: Song) {
     var intent = Intent(context, PlayerActivity::class.java)
+
+    val bundle = Bundle().apply {
+        putParcelable(SONG_KEY, song)
+    }
+
+    intent.putExtras(bundle)
 
     context.startActivity(intent)
 }
@@ -19,12 +28,14 @@ fun navigateToPlayerActivity(context: Context, song: Song) {
 class PlayerActivity : AppCompatActivity() {
     private lateinit var tvPlayCount: TextView
     private lateinit var btnChangeUser: Button
+    private lateinit var binding: ActivityMainBinding
+
     private val randomNum = Random.nextInt(10, 50)
     var curPlayCount = randomNum
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
 
         tvPlayCount = findViewById(R.id.tvPlayCount)
 
@@ -43,6 +54,15 @@ class PlayerActivity : AppCompatActivity() {
         imgBtnNext.setOnClickListener { nextClicked() }
 
 
+        with(binding) {
+            val song: Song? = intent.getParcelableExtra<Song>(SONG_KEY)
+
+            if (song != null) {
+                tvSongTitle.text = getString(R.string.player_song_title, song.title)
+                tvArtist.text = getString(R.string.player_song_artist, song.artist)
+                ivAlbumCover.setImageResource(song.largeImageID)
+            }
+        }
     }
 
     fun nextClicked() {

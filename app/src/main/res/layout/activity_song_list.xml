@@ -24,11 +24,11 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:barrierDirection="top"
-        app:constraint_referenced_ids="layout"
+        app:constraint_referenced_ids="miniplayer"
         />
 
     <LinearLayout
-        android:id="@+id/layout"
+        android:id="@+id/miniplayer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/barrier"

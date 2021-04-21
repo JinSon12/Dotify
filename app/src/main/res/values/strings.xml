@@ -2,4 +2,7 @@
     <string name="app_name">Dotify</string>
     <string name="change_user_text">Apply</string>
     <string name="miniplayer_song_info">%s - %s</string>
+    <string name="player_song_title">%s</string>
+    <string name="player_song_artist">%s</string>
+    <string name="player_song_album">%s</string>
 </resources>
