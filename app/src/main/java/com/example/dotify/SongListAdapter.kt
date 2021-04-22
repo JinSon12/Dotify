@@ -3,6 +3,7 @@ package com.example.dotify
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ericchee.songdataprovider.Song
 import com.example.dotify.databinding.ItemSongBinding
@@ -34,10 +35,12 @@ class SongListAdapter (private var listOfSongs: List<Song>): RecyclerView.Adapte
     }
 
     fun updateSongList(newListofSongs: List<Song>) {
+        val oldSongList = listOfSongs
         this.listOfSongs = newListofSongs
 
-        notifyDataSetChanged()
-
+        val diffCallback = SongDiffCallback(oldSongList, listOfSongs)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
+        diffResult.dispatchUpdatesTo(this)
     }
 
 

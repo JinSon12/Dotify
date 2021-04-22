@@ -13,13 +13,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        >
 
         <ImageView
             android:id="@+id/ivSmallAlbumPic"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/strangers_cover_art" />
+            android:src="@drawable/strangers_cover_art"
+            android:contentDescription="Small album cover" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -42,7 +46,7 @@
                 android:id="@+id/tvArtist"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Artist"
+                android:text="Artist Gugu Gaga Gege kakaotalk makeCurrent Slack notability trash can, feat pictures "
                 android:textSize="20sp"
                 android:layout_marginStart="12dp"
                 android:layout_below="@id/tvSongName"
