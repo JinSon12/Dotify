@@ -51,8 +51,6 @@ class PlayerActivity : AppCompatActivity() {
 
         val imgBtnNext = findViewById<ImageButton>(R.id.imgBtnNext)
 
-        imgBtnNext.setOnClickListener { nextClicked() }
-
 
         with(binding) {
             val song: Song? = intent.getParcelableExtra<Song>(SONG_KEY)
@@ -62,10 +60,14 @@ class PlayerActivity : AppCompatActivity() {
                 tvArtist.text = getString(R.string.player_song_artist, song.artist)
                 ivAlbumCover.setImageResource(song.largeImageID)
             }
+
+            // ? nextClicked is this the right way to handle this? What should be the View here?
+            imgBtnNext.setOnClickListener { nextClicked(root) }
+
         }
     }
 
-    fun nextClicked() {
+    fun nextClicked(view: View) {
         Toast.makeText(this, "Skipping to next Track", Toast.LENGTH_SHORT).show()
     }
 
