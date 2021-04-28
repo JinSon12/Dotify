@@ -7,4 +7,10 @@
     <string name="player_song_album">%s</string>
     <string name="setting">setting</string>
     <string name="action_settings">action1</string>
+    <string name="profile">Profile</string>
+    <string name="profile_statistics">Profile Statistics</string>
+
+    <string name="about">About</string>
+    <string name="hello_blank_fragment">Blank</string>
+
 </resources>

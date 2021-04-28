@@ -37,7 +37,7 @@ class PlayerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
 
-        btnChangeUser = findViewById(R.id.btnChangeUser)
+        btnChangeUser = findViewById(R.id.btnSettings)
         btnChangeUser.setOnClickListener {
             val btnText = btnChangeUser.text.toString()
             changeUserClicked(btnText)
@@ -67,6 +67,10 @@ class PlayerActivity : AppCompatActivity() {
             imgBtnPlay.setOnClickListener {
                 curPlayCount++
                 tvPlayCount.text = "played $curPlayCount times "
+            }
+
+            btnSettings.setOnClickListener {
+                startSettingsActivity(this@PlayerActivity)
             }
 
         }
