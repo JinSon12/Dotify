@@ -6,4 +6,5 @@
     <string name="player_song_artist">%s</string>
     <string name="player_song_album">%s</string>
     <string name="setting">setting</string>
+    <string name="action_settings">action1</string>
 </resources>

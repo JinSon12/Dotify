@@ -10,6 +10,8 @@ import com.ericchee.songdataprovider.SongDataProvider
 import com.example.dotify.databinding.ActivitySongListBinding
 
 class SongListActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_song_list)

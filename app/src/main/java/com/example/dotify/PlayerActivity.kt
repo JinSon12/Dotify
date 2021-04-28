@@ -12,6 +12,7 @@ import com.example.dotify.databinding.ActivityMainBinding
 import kotlin.random.Random
 
 private const val SONG_KEY = "song"
+private const val COUNT_NUM_KEY = "COUNT_NUM_KEY"
 
 fun navigateToPlayerActivity(context: Context, song: Song) {
     var intent = Intent(context, PlayerActivity::class.java)
@@ -26,24 +27,17 @@ fun navigateToPlayerActivity(context: Context, song: Song) {
 }
 
 class PlayerActivity : AppCompatActivity() {
-    private lateinit var tvPlayCount: TextView
     private lateinit var btnChangeUser: Button
     private lateinit var binding: ActivityMainBinding
 
-    private val randomNum = Random.nextInt(10, 50)
-    var curPlayCount = randomNum
+    private val randomNum = Random.nextInt(0, 50)
+    private var curPlayCount = randomNum
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
 
-        tvPlayCount = findViewById(R.id.tvPlayCount)
-
-        tvPlayCount.text = "played $randomNum times"
-
-
         btnChangeUser = findViewById(R.id.btnChangeUser)
-
         btnChangeUser.setOnClickListener {
             val btnText = btnChangeUser.text.toString()
             changeUserClicked(btnText)
@@ -55,14 +49,25 @@ class PlayerActivity : AppCompatActivity() {
         with(binding) {
             val song: Song? = intent.getParcelableExtra<Song>(SONG_KEY)
 
+            if (savedInstanceState != null) {
+                curPlayCount = savedInstanceState.getInt(COUNT_NUM_KEY, randomNum)
+            }
+
             if (song != null) {
                 tvSongTitle.text = getString(R.string.player_song_title, song.title)
                 tvArtist.text = getString(R.string.player_song_artist, song.artist)
                 ivAlbumCover.setImageResource(song.largeImageID)
             }
 
+            tvPlayCount.text = "played $curPlayCount times"
+
             // ? nextClicked is this the right way to handle this? What should be the View here?
             imgBtnNext.setOnClickListener { nextClicked(root) }
+
+            imgBtnPlay.setOnClickListener {
+                curPlayCount++
+                tvPlayCount.text = "played $curPlayCount times "
+            }
 
         }
     }
@@ -76,8 +81,6 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     fun playClicked(view: View) {
-        curPlayCount++
-        tvPlayCount.text = "played $curPlayCount times "
     }
 
     fun changeUserClicked(btnText: String) {
@@ -98,6 +101,12 @@ class PlayerActivity : AppCompatActivity() {
             tvUserName.text = input
             btnChangeUser.text = "Change User"
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        // save the count value in the bundle and let the OS handle the rest.
+        outState.putInt(COUNT_NUM_KEY, curPlayCount)
+        super.onSaveInstanceState(outState)
     }
 
 
