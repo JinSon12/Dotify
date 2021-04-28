@@ -9,8 +9,13 @@ import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
 import com.example.dotify.databinding.ActivitySongListBinding
 
-class SongListActivity : AppCompatActivity() {
+private const val SONG_KEY = "SONG_KEY"
+private const val SONG_TITLE = "SONG_TITLE"
+private const val SONG_ARTIST = "SONG_ARTIST"
 
+class SongListActivity : AppCompatActivity() {
+    private var miniPlayerSong = ""
+    var selectedSong : Song? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,9 +27,6 @@ class SongListActivity : AppCompatActivity() {
 
         val binding = ActivitySongListBinding.inflate(layoutInflater).apply { setContentView(root)}
 
-        var selectedSong : Song? = null
-
-
 
 
         with(binding) {
@@ -33,12 +35,26 @@ class SongListActivity : AppCompatActivity() {
             // the recyclerView's adapter should be PeopleAdapter(people) or val adapter
             rvSongList.adapter = adapter
 
+            if (savedInstanceState?.getParcelable<Song>(SONG_KEY) != null) {
+                val minPlayerText = tvSongTitle
+                selectedSong = savedInstanceState.getParcelable(SONG_KEY)
+
+                miniPlayerSong = getString(R.string.miniplayer_song_info, selectedSong?.title, selectedSong?.artist)
+
+                minPlayerText.text = miniPlayerSong
+
+                miniplayer.visibility = View.VISIBLE
+            }
+
+            // when clicked on a song
             adapter.onSongClickListener = { song: Song ->
                 val minPlayerText = tvSongTitle
 
                 selectedSong = song
 
-                minPlayerText.text = getString(R.string.miniplayer_song_info, song.title, song.artist)
+                miniPlayerSong = getString(R.string.miniplayer_song_info, song.title, song.artist)
+
+                minPlayerText.text = miniPlayerSong
 
                 miniplayer.visibility = View.VISIBLE
 
@@ -61,5 +77,11 @@ class SongListActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        // save the count value in the bundle and let the OS handle the rest.
+        outState.putParcelable(SONG_KEY, selectedSong)
+        super.onSaveInstanceState(outState)
     }
 }

@@ -80,8 +80,8 @@ class PlayerActivity : AppCompatActivity() {
         Toast.makeText(this, "Skipping to previous Track", Toast.LENGTH_SHORT).show()
     }
 
-    fun playClicked(view: View) {
-    }
+//    fun playClicked(view: View) {
+//    }
 
     fun changeUserClicked(btnText: String) {
         Log.i("jin", btnText)
