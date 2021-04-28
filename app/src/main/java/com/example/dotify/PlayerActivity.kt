@@ -5,8 +5,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.ericchee.songdataprovider.Song
 import com.example.dotify.databinding.ActivityMainBinding
 import kotlin.random.Random
@@ -37,11 +40,7 @@ class PlayerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
 
-        btnChangeUser = findViewById(R.id.btnSettings)
-        btnChangeUser.setOnClickListener {
-            val btnText = btnChangeUser.text.toString()
-            changeUserClicked(btnText)
-        }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val imgBtnNext = findViewById<ImageButton>(R.id.imgBtnNext)
 
@@ -57,6 +56,10 @@ class PlayerActivity : AppCompatActivity() {
                 tvSongTitle.text = getString(R.string.player_song_title, song.title)
                 tvArtist.text = getString(R.string.player_song_artist, song.artist)
                 ivAlbumCover.setImageResource(song.largeImageID)
+
+                btnSettings.setOnClickListener {
+                    startSettingsActivity(this@PlayerActivity, song, curPlayCount)
+                }
             }
 
             tvPlayCount.text = "played $curPlayCount times"
@@ -69,11 +72,29 @@ class PlayerActivity : AppCompatActivity() {
                 tvPlayCount.text = "played $curPlayCount times "
             }
 
-            btnSettings.setOnClickListener {
-                startSettingsActivity(this@PlayerActivity)
-            }
+
 
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+
+        // hey look we have modified the menu, so I am just letting you know.
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.menu_settings -> startSettingsActivity(this@PlayerActivity, song)
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        // destroying this activity when the up button is clicked.
+        finish()
+        return super.onSupportNavigateUp()
     }
 
     fun nextClicked(view: View) {

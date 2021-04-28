@@ -35,7 +35,7 @@
             android:id="@+id/btnSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Change User"
+            android:text="@string/setting"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             />
@@ -128,15 +128,7 @@
 
     </LinearLayout>
 
-    <fragment
-        android:id="@+id/navHost"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="71dp" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
