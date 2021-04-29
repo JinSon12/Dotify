@@ -33,33 +33,37 @@ class PlayerActivity : AppCompatActivity() {
     private lateinit var btnChangeUser: Button
     private lateinit var binding: ActivityMainBinding
 
-    private val randomNum = Random.nextInt(0, 50)
+    private val randomNum = Random.nextInt(1, 50)
     private var curPlayCount = randomNum
+
+    private var song: Song? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
 
+        this.song = intent.getParcelableExtra<Song>(SONG_KEY)
+
+        val songObj = this.song
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val imgBtnNext = findViewById<ImageButton>(R.id.imgBtnNext)
 
 
         with(binding) {
-            val song: Song? = intent.getParcelableExtra<Song>(SONG_KEY)
 
             if (savedInstanceState != null) {
                 curPlayCount = savedInstanceState.getInt(COUNT_NUM_KEY, randomNum)
             }
 
-            if (song != null) {
-                tvSongTitle.text = getString(R.string.player_song_title, song.title)
-                tvArtist.text = getString(R.string.player_song_artist, song.artist)
-                ivAlbumCover.setImageResource(song.largeImageID)
+            if (songObj != null) {
+                tvSongTitle.text = getString(R.string.player_song_title, songObj.title)
+                tvArtist.text = getString(R.string.player_song_artist, songObj.artist)
+                ivAlbumCover.setImageResource(songObj.largeImageID)
 
-                btnSettings.setOnClickListener {
-                    startSettingsActivity(this@PlayerActivity, song, curPlayCount)
-                }
+//                btnSettings.setOnClickListener {
+//                    startSettingsActivity(this@PlayerActivity, songObj, curPlayCount)
+//                }
             }
 
             tvPlayCount.text = "played $curPlayCount times"
@@ -72,8 +76,6 @@ class PlayerActivity : AppCompatActivity() {
                 tvPlayCount.text = "played $curPlayCount times "
             }
 
-
-
         }
     }
 
@@ -85,9 +87,15 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            R.id.menu_settings -> startSettingsActivity(this@PlayerActivity, song)
+//        val song: Song? = intent.getParcelableExtra<Song>(SONG_KEY)
+        val songObj = this.song
+
+        if (songObj!= null) {
+            when(item.itemId) {
+                R.id.menu_settings -> startSettingsActivity(this@PlayerActivity, songObj, curPlayCount)
+            }
         }
+
         return super.onOptionsItemSelected(item)
     }
 
@@ -103,29 +111,6 @@ class PlayerActivity : AppCompatActivity() {
 
     fun prvClicked(view: View) {
         Toast.makeText(this, "Skipping to previous Track", Toast.LENGTH_SHORT).show()
-    }
-
-//    fun playClicked(view: View) {
-//    }
-
-    fun changeUserClicked(btnText: String) {
-        Log.i("jin", btnText)
-        val tvUserName = findViewById<TextView>(R.id.tvUserName)
-        val etUserName = findViewById<EditText>(R.id.etUserName)
-
-        // prompt input from the user
-        if (btnText == "Change User") {
-            tvUserName.visibility = View.GONE
-            etUserName.visibility = View.VISIBLE
-            btnChangeUser.text = "Apply"
-
-        } else if (btnText == "Apply") {
-            tvUserName.visibility = View.VISIBLE
-            etUserName.visibility = View.GONE
-            var input = etUserName.text.toString()
-            tvUserName.text = input
-            btnChangeUser.text = "Change User"
-        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
