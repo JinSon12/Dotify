@@ -1,4 +1,4 @@
-package com.example.dotify
+package com.example.dotify.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.Toast
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
+import com.example.dotify.R
+import com.example.dotify.adapter.SongListAdapter
 import com.example.dotify.databinding.ActivitySongListBinding
 
 private const val SONG_KEY = "SONG_KEY"

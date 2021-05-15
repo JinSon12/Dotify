@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.dotify.SettingsFragment"
+        android:name="com.example.dotify.fragment.SettingsFragment"
         android:label="@string/setting"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -26,13 +26,13 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.dotify.ProfileFragment"
+        android:name="com.example.dotify.fragment.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/statisticsFragment"
-        android:name="com.example.dotify.StatisticsFragment"
+        android:name="com.example.dotify.fragment.StatisticsFragment"
         android:label="@string/profile_statistics"
         tools:layout="@layout/fragment_statistics" >
         <argument
@@ -45,7 +45,7 @@
 
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.dotify.AboutFragment"
+        android:name="com.example.dotify.fragment.AboutFragment"
         android:label="@string/about"
         tools:layout="@layout/fragment_about" />
     <action

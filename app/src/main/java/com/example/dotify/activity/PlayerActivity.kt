@@ -1,4 +1,4 @@
-package com.example.dotify
+package com.example.dotify.activity
 
 import android.content.Context
 import android.content.Intent
@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.*
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.ericchee.songdataprovider.Song
+import com.example.dotify.R
 import com.example.dotify.databinding.ActivityMainBinding
 import kotlin.random.Random
 
