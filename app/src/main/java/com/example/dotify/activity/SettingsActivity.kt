@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.ericchee.songdataprovider.Song
+import com.example.dotify.DotifyApplication
 import com.example.dotify.R
 import com.example.dotify.databinding.ActivitySettingsBinding
 
@@ -15,13 +16,13 @@ import com.example.dotify.databinding.ActivitySettingsBinding
 private const val SONG_KEY = "song"
 private const val SONG_COUNT = "playCount"
 
-fun startSettingsActivity(context: Context, song: Song, playCount: Int) {
+fun startSettingsActivity(context: Context, song: Song) {
     with(context) {
         val intent = Intent(context, SettingsActivity::class.java)
         // append intent.
         startActivity(intent.apply {
             putExtra(SONG_KEY, song)
-            putExtra(SONG_COUNT, playCount)
+//            putExtra(SONG_COUNT, playCount)
         })
     }
 }
@@ -29,6 +30,7 @@ fun startSettingsActivity(context: Context, song: Song, playCount: Int) {
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
+    private lateinit var dotifyApp: DotifyApplication
     private val navController by lazy { findNavController(R.id.navHost) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,12 +40,12 @@ class SettingsActivity : AppCompatActivity() {
 
         binding = ActivitySettingsBinding.inflate(layoutInflater).apply { setContentView(root) }
 
-        with(binding) {
+        this.dotifyApp = this.applicationContext as DotifyApplication
 
-            // setting the navGraph programmatically instead of using xml
-            // send the intent's data to the start fragment.
-            navController.setGraph(R.navigation.nav_graph, intent.extras)
-        }
+
+        // setting the navGraph programmatically instead of using xml
+        // send the intent's data to the start fragment.
+        navController.setGraph(R.navigation.nav_graph, intent.extras)
 
         setupActionBarWithNavController(navController)
 

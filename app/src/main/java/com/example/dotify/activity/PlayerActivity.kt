@@ -11,7 +11,9 @@ import android.view.View
 import android.widget.*
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.ericchee.songdataprovider.Song
+import com.example.dotify.DotifyApplication
 import com.example.dotify.R
+import com.example.dotify.adapter.SongListAdapter
 import com.example.dotify.databinding.ActivityMainBinding
 import kotlin.random.Random
 
@@ -31,50 +33,65 @@ fun navigateToPlayerActivity(context: Context, song: Song) {
 }
 
 class PlayerActivity : AppCompatActivity() {
-    private lateinit var btnChangeUser: Button
     private lateinit var binding: ActivityMainBinding
+    private lateinit var adapter: SongListAdapter
+    private lateinit var dotifyApp: DotifyApplication
 
     private val randomNum = Random.nextInt(1, 50)
     private var curPlayCount = randomNum
+    private var songPlayCount = curPlayCount
 
     private var song: Song? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         this.song = intent.getParcelableExtra<Song>(SONG_KEY)
 
         val songObj = this.song
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        dotifyApp = this.applicationContext as DotifyApplication
+
 
         val imgBtnNext = findViewById<ImageButton>(R.id.imgBtnNext)
 
+        val songPlayCount = dotifyApp.songPlayCount
 
         with(binding) {
 
-            if (savedInstanceState != null) {
-                curPlayCount = savedInstanceState.getInt(COUNT_NUM_KEY, randomNum)
+
+            Log.i("playerActivity", songPlayCount.toString())
+
+
+            if (songPlayCount != null && savedInstanceState != null) {
+//                curPlayCount = savedInstanceState.getInt(COUNT_NUM_KEY, randomNum)
+    // instead of using the savedInstanceState, now we will use the Application Data
+
+                curPlayCount = songPlayCount
+                Log.i("playerActivity-71", curPlayCount.toString())
+                Log.i("playerActivity-71", savedInstanceState.toString())
             }
 
             if (songObj != null) {
                 tvSongTitle.text = getString(R.string.player_song_title, songObj.title)
                 tvArtist.text = getString(R.string.player_song_artist, songObj.artist)
                 ivAlbumCover.setImageResource(songObj.largeImageID)
-
-//                btnSettings.setOnClickListener {
-//                    startSettingsActivity(this@PlayerActivity, songObj, curPlayCount)
-//                }
             }
 
-            tvPlayCount.text = "played $curPlayCount times"
+            dotifyApp.songPlayCount = curPlayCount
+            tvPlayCount.text = "played ${dotifyApp.songPlayCount} times"
+
 
             // ? nextClicked is this the right way to handle this? What should be the View here?
             imgBtnNext.setOnClickListener { nextClicked(root) }
 
             imgBtnPlay.setOnClickListener {
+                // ? why does dotifyApp.songPlaycount = curPlayCount++ doesn't work?
                 curPlayCount++
-                tvPlayCount.text = "played $curPlayCount times "
+                dotifyApp.songPlayCount = curPlayCount
+                tvPlayCount.text = "played ${dotifyApp.songPlayCount} times "
             }
 
         }
@@ -93,7 +110,7 @@ class PlayerActivity : AppCompatActivity() {
 
         if (songObj!= null) {
             when(item.itemId) {
-                R.id.menu_settings -> startSettingsActivity(this@PlayerActivity, songObj, curPlayCount)
+                R.id.menu_settings -> startSettingsActivity(this@PlayerActivity, songObj)
             }
         }
 
@@ -114,11 +131,13 @@ class PlayerActivity : AppCompatActivity() {
         Toast.makeText(this, "Skipping to previous Track", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        // save the count value in the bundle and let the OS handle the rest.
-        outState.putInt(COUNT_NUM_KEY, curPlayCount)
-        super.onSaveInstanceState(outState)
-    }
+    // for handling orientations and so on (when a new instance of activity is created)
+    // and maintaining the data that it has.
+//    override fun onSaveInstanceState(outState: Bundle) {
+//        // save the count value in the bundle and let the OS handle the rest.
+//        outState.putInt(COUNT_NUM_KEY, curPlayCount)
+//        super.onSaveInstanceState(outState)
+//    }
 
 
 }
