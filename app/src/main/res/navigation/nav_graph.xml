@@ -15,7 +15,7 @@
             app:destination="@id/aboutFragment" />
         <argument
             android:name="song"
-            app:argType="com.ericchee.songdataprovider.Song" />
+            app:argType="com.example.dotify.model.Song" />
         <action
             android:id="@+id/action_settingsFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
@@ -34,7 +34,7 @@
         tools:layout="@layout/fragment_statistics" >
         <argument
             android:name="song"
-            app:argType="com.ericchee.songdataprovider.Song" />
+            app:argType="com.example.dotify.model.Song" />
     </fragment>
 
     <fragment

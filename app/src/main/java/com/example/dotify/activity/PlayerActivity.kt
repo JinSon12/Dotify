@@ -10,11 +10,13 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.ericchee.songdataprovider.Song
+import coil.load
+//import com.ericchee.songdataprovider.Song
 import com.example.dotify.DotifyApplication
 import com.example.dotify.R
 import com.example.dotify.adapter.SongListAdapter
 import com.example.dotify.databinding.ActivityMainBinding
+import com.example.dotify.model.Song
 import kotlin.random.Random
 
 private const val SONG_KEY = "song"
@@ -68,7 +70,6 @@ class PlayerActivity : AppCompatActivity() {
             if (songPlayCount != null && savedInstanceState != null) {
 //                curPlayCount = savedInstanceState.getInt(COUNT_NUM_KEY, randomNum)
     // instead of using the savedInstanceState, now we will use the Application Data
-
                 curPlayCount = songPlayCount
                 Log.i("playerActivity-71", curPlayCount.toString())
                 Log.i("playerActivity-71", savedInstanceState.toString())
@@ -77,7 +78,8 @@ class PlayerActivity : AppCompatActivity() {
             if (songObj != null) {
                 tvSongTitle.text = getString(R.string.player_song_title, songObj.title)
                 tvArtist.text = getString(R.string.player_song_artist, songObj.artist)
-                ivAlbumCover.setImageResource(songObj.largeImageID)
+                // fetch image later
+                ivAlbumCover.load(songObj.largeImageURL)
             }
 
             dotifyApp.songPlayCount = curPlayCount

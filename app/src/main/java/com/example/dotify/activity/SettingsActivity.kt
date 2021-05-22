@@ -7,10 +7,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.ericchee.songdataprovider.Song
+//import com.ericchee.songdataprovider.Song
 import com.example.dotify.DotifyApplication
 import com.example.dotify.R
 import com.example.dotify.databinding.ActivitySettingsBinding
+import com.example.dotify.model.Song
 
 
 private const val SONG_KEY = "song"

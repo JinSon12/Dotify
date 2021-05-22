@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 
 import androidx.navigation.fragment.navArgs
+import coil.load
 import com.example.dotify.DotifyApplication
 import com.example.dotify.databinding.FragmentStatisticsBinding
 
@@ -39,7 +40,7 @@ class StatisticsFragment : Fragment() {
             val receivedSong = safeArgs.song
             val playCount = dotifyApp.songPlayCount
 
-            ivAlbumCover.setImageResource(receivedSong.largeImageID)
+            ivAlbumCover.load(receivedSong.largeImageURL)
             tvSongTitle.text = receivedSong.title
             tvSongCount.text = "$playCount plays"
         }

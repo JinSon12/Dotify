@@ -4,9 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.ericchee.songdataprovider.Song
+import coil.load
+//import com.ericchee.songdataprovider.Song
 import com.example.dotify.SongDiffCallback
 import com.example.dotify.databinding.ItemSongBinding
+import com.example.dotify.model.Song
 
 class SongListAdapter (private var listOfSongs: List<Song>): RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
 
@@ -26,7 +28,7 @@ class SongListAdapter (private var listOfSongs: List<Song>): RecyclerView.Adapte
         with(holder.binding) {
             tvSongName.text = song.title
             tvArtist.text = song.artist
-            ivSmallAlbumPic.setImageResource(song.smallImageID)
+            ivSmallAlbumPic.load(song.smallImageURL)
 
             root.setOnClickListener{
                 onSongClickListener(song)

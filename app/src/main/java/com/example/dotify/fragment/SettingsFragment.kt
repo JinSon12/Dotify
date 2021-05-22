@@ -39,7 +39,8 @@ class SettingsFragment : Fragment() {
 //            val playCount = safeArgs.playCount
             val playcount = dotifyApp.songPlayCount
 
-            Toast.makeText(context, "$receivedSong", Toast.LENGTH_SHORT).show() // DEBUG
+//            DEBUG
+//            Toast.makeText(context, "$receivedSong", Toast.LENGTH_SHORT).show() // DEBUG
 
             btnProfile.setOnClickListener {
                 navController.navigate(R.id.profileFragment)
