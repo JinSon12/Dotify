@@ -16,5 +16,9 @@
     <string name="join_date">Join Date : Jan 1 2021</string>
     <string name="email">email: chunsik@bmail.com</string>
     <string name="song_stat">Song Statistics</string>
+    <string name="new_song">New Songs</string>
+    <string name="new_song_channel_description">New Uploaded Music</string>
+
+
 
 </resources>
