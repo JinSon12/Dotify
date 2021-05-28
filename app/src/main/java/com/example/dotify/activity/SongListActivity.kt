@@ -1,5 +1,6 @@
 package com.example.dotify.activity
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -43,6 +44,8 @@ class SongListActivity : AppCompatActivity() {
 
 
         with(binding) {
+
+
             songs = listOf()
 
 //            val listOfSong = listOf<Song>()
@@ -116,7 +119,6 @@ class SongListActivity : AppCompatActivity() {
                 songs = newSongs
                 Toast.makeText(this@SongListActivity, "loaded!", Toast.LENGTH_SHORT).show()
                 Log.i("sla", "$newSongs")
-
 
                 adapter.updateSongList(newSongs.toMutableList().shuffled())
             }.onFailure {
