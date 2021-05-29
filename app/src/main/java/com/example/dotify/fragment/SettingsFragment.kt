@@ -74,11 +74,6 @@ class SettingsFragment : Fragment() {
             switchSettingsPull.isChecked = preferences.getBoolean(NOTIFICATIONS_ENABLED_PREF_KEY, false)
             songNotificationManager.isNotificationEnabled = preferences.getBoolean(NOTIFICATIONS_ENABLED_PREF_KEY, false)
 
-            if (switchSettingsPull.isChecked ) {
-                fetchSongNotiManager.fetchPostNoti()
-                sendSongtoNotiManager(randSong)
-            }
-
             switchSettingsPull.setOnCheckedChangeListener {  _, isChecked ->
                 songNotificationManager.isNotificationEnabled = isChecked
 
@@ -88,10 +83,10 @@ class SettingsFragment : Fragment() {
                 }
 
                 if (isChecked) {
-                    Log.i("settingFra","checked ")
                     fetchSongNotiManager.fetchPostNoti()
                     Toast.makeText(context, "Notifications enabled", Toast.LENGTH_SHORT).show()
                 } else {
+                    fetchSongNotiManager.stopPeriodicallyRefreshing()
                     Toast.makeText(context, "Notifications are turned off", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -106,5 +101,12 @@ class SettingsFragment : Fragment() {
             Log.i("settingFra","randSong")
             songNotificationManager.publishNewSongNoti(randSong)
         }
+    }
+
+    private fun notificationInitialStatus(isChecked: Boolean, randSong: Song?) {
+        if (!isChecked) {
+            fetchSongNotiManager.stopPeriodicallyRefreshing()
+        }
+
     }
 }

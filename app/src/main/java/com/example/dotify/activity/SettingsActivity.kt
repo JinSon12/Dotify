@@ -23,7 +23,6 @@ fun startSettingsActivity(context: Context, song: Song) {
         // append intent.
         startActivity(intent.apply {
             putExtra(SONG_KEY, song)
-//            putExtra(SONG_COUNT, playCount)
         })
     }
 }

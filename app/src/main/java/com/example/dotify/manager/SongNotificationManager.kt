@@ -6,6 +6,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.os.Bundle
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.dotify.R
@@ -13,6 +14,8 @@ import com.example.dotify.activity.PlayerActivity
 import com.example.dotify.activity.navigateToPlayerActivity
 import com.example.dotify.model.Song
 import kotlin.random.Random
+
+private const val SONG_KEY = "song"
 
 class SongNotificationManager (  private val context: Context) {
     private val notificationManager = NotificationManagerCompat.from(context)
@@ -32,17 +35,16 @@ class SongNotificationManager (  private val context: Context) {
         // Define the intent or action you want when user taps on notification
         val intent = Intent(context, PlayerActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            // TODO fix this
-//            putExtra(EMAIL_INFO_KEY, "This string is coming from the notification")
 
-
+            putExtra(SONG_KEY, randSong)
         }
+
         val pendingIntent: PendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT) // dont forget to add PendingIntent.FLAG_UPDATE_CURRENT to send data over
 
 
         // Build information you want the notification to show
         val builder = NotificationCompat.Builder(context, NEW_CHANNEL_ID)    // channel id from creating the channel
-            .setSmallIcon(R.drawable.icon)
+            .setSmallIcon(R.drawable.ic_android_black_24dp)
             .setContentTitle("${randSong.artist} just released a new song!!!")
             .setContentText("Listen to ${randSong.title} now on Dotify")
             .setContentIntent(pendingIntent)    // sets the action when user clicks on notification

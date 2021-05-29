@@ -10,7 +10,8 @@ class FetchSongNotiManager(context: Context) {
     private val workManager: WorkManager = WorkManager.getInstance(context)
 
     fun fetchPostNoti() {
-        val request = OneTimeWorkRequestBuilder<FetchPostNotiWorker>()// (20, TimeUnit.MINUTES)
+        val request = PeriodicWorkRequestBuilder<FetchPostNotiWorker>(20, TimeUnit.MINUTES)
+//        val request = OneTimeWorkRequestBuilder<FetchPostNotiWorker>()
             .setInitialDelay(5, TimeUnit.SECONDS)
             .setConstraints(
                 Constraints.Builder()
@@ -21,9 +22,6 @@ class FetchSongNotiManager(context: Context) {
             .build()
 
         workManager.enqueue(request)
-
-        // pending intent here.
-
     }
 
     fun stopPeriodicallyRefreshing() {
