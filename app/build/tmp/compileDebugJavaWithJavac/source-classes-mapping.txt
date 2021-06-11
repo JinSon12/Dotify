@@ -1,0 +1,20 @@
+com/example/dotify/databinding/FragmentAboutBinding.java
+ com.example.dotify.databinding.FragmentAboutBinding
+com/example/dotify/databinding/ItemSongBinding.java
+ com.example.dotify.databinding.ItemSongBinding
+com/example/dotify/DataBindingTriggerClass.java
+ com.example.dotify.DataBindingTriggerClass
+com/example/dotify/databinding/ActivityMainBinding.java
+ com.example.dotify.databinding.ActivityMainBinding
+com/example/dotify/databinding/FragmentProfileBinding.java
+ com.example.dotify.databinding.FragmentProfileBinding
+com/example/dotify/BuildConfig.java
+ com.example.dotify.BuildConfig
+com/example/dotify/databinding/FragmentSettingsBinding.java
+ com.example.dotify.databinding.FragmentSettingsBinding
+com/example/dotify/databinding/ActivitySettingsBinding.java
+ com.example.dotify.databinding.ActivitySettingsBinding
+com/example/dotify/databinding/FragmentStatisticsBinding.java
+ com.example.dotify.databinding.FragmentStatisticsBinding
+com/example/dotify/databinding/ActivitySongListBinding.java
+ com.example.dotify.databinding.ActivitySongListBinding

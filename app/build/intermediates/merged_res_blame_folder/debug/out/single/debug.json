@@ -1,0 +1,110 @@
+[
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/drawable_icon.jpg.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/drawable/icon.jpg"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/drawable_ic_next.png.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/drawable/ic_next.png"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/drawable_chunsik.gif.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/drawable/chunsik.gif"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/layout_item_song.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/layout/item_song.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/layout_activity_song_list.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/layout/activity_song_list.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/layout_fragment_settings.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/layout_activity_settings.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/layout/activity_settings.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/layout_fragment_about.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/layout/fragment_about.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/navigation_nav_graph.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/drawable_ic_play.png.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/drawable/ic_play.png"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/drawable_ic_previous.png.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/drawable/ic_previous.png"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/drawable_strangers_cover_art.jpg.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/drawable/strangers_cover_art.jpg"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/menu_menu.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/menu/menu.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/layout_fragment_profile.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/layout_fragment_statistics.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/layout/fragment_statistics.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/layout-land_activity_main.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/layout-land/activity_main.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/drawable_ic_android_black_24dp.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/drawable/ic_android_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/jinson/AndroidStudioProjects/Dotify/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/Users/jinson/AndroidStudioProjects/Dotify/app/src/main/res/layout/activity_main.xml"
+    }
+]
