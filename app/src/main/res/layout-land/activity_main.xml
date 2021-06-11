@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+>
+
+    <ImageView
+        android:id="@+id/ivAlbumCover"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="23dp"
+        android:contentDescription="Image of album cover"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/strangers_cover_art" />
+
+    <TextView
+        android:id="@+id/tvSongTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Strangers"
+        android:textSize="28sp"
+        app:layout_constraintLeft_toRightOf="@id/ivAlbumCover"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvArtist"/>
+
+    <TextView
+        android:id="@+id/tvArtist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Seven Lions featuring Tove Lo, Myon, Sharon"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:layout_constraintRight_toRightOf="@id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@id/tvSongTitle"
+        app:layout_constraintBottom_toTopOf="@id/tvPlayCount"
+        app:layout_constraintStart_toStartOf="@id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@id/linearLayout"
+        />
+
+    <TextView
+        android:id="@+id/tvPlayCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="123 plays"
+        app:layout_constraintTop_toBottomOf="@id/tvArtist"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintStart_toStartOf="@id/tvSongTitle"
+        app:layout_constraintEnd_toEndOf="@id/tvSongTitle"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="@id/ivAlbumCover"
+        app:layout_constraintLeft_toRightOf="@id/ivAlbumCover"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvPlayCount"
+        android:layout_marginLeft="10dp">
+
+
+        <ImageButton
+            android:id="@+id/imgBtnPrevious"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0000"
+            android:onClick="prvClicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_previous" />
+
+        <ImageButton
+            android:id="@+id/imgBtnPlay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0000"
+            android:onClick="playClicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_play" />
+
+        <ImageButton
+            android:id="@+id/imgBtnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0000"
+            android:onClick="nextClicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_next" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Dotify</string>
+    <string name="change_user_text">Apply</string>
+    <string name="miniplayer_song_info">%s - %s</string>
+    <string name="player_song_title">%s</string>
+    <string name="player_song_artist">%s</string>
+    <string name="player_song_album">%s</string>
+    <string name="setting">setting</string>
+    <string name="menu_settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="profile_statistics">Profile Statistics</string>
+
+    <string name="about">About</string>
+    <string name="hello_blank_fragment">Blank</string>
+    <string name="age">Age : unknown</string>
+    <string name="join_date">Join Date : Jan 1 2021</string>
+    <string name="email">email: chunsik@bmail.com</string>
+    <string name="song_stat">Song Statistics</string>
+
+</resources>

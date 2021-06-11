@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatisticsFragment"
+    android:padding="14dp">
+
+    <TextView
+        android:id="@+id/tvSongStat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/song_stat"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ivAlbumCover"
+        />
+
+    <ImageView
+        android:id="@+id/ivAlbumCover"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:paddingBottom="15dp"
+        android:src="@drawable/strangers_cover_art"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSongStat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvSongTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player_song_title"
+        android:textSize="20sp"
+        android:paddingBottom="15dp"
+        app:layout_constraintStart_toStartOf="@id/ivAlbumCover"
+        app:layout_constraintEnd_toEndOf="@id/ivAlbumCover"
+        app:layout_constraintTop_toBottomOf="@id/ivAlbumCover"
+        app:layout_constraintBottom_toTopOf="@id/tvSongCount"
+        />
+
+    <TextView
+        android:id="@+id/tvSongCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player_song_title"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSongTitle"
+
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
