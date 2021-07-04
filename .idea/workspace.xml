@@ -39,6 +39,34 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Dotify" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Dotify" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Dotify" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -50,7 +78,15 @@
       </list>
     </option>
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="hw3" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1r1fC13jeZce1vYmlWDtuEljCwX" />
@@ -292,9 +328,10 @@
     <state x="-1360" y="121" key="Vcs.Push.Dialog.v2/0.23.1440.830/-1920.-157.1920.1057@-1920.-157.1920.1057" timestamp="1619698439811" />
     <state x="-1360" y="121" key="Vcs.Push.Dialog.v2/0.23.1440.831/-1920.-157.1920.1057@-1920.-157.1920.1057" timestamp="1619026897435" />
     <state x="-1360" y="121" key="Vcs.Push.Dialog.v2/0.23.1440.832/-1920.-157.1920.1057@-1920.-157.1920.1057" timestamp="1618501897664" />
-    <state x="-1160" y="313" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619011535052">
-      <screen x="-1920" y="-157" width="1920" height="1057" />
+    <state x="570" y="392" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1623393939606">
+      <screen x="0" y="23" width="1440" height="829" />
     </state>
+    <state x="570" y="392" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.829@0.23.1440.829" timestamp="1623393939606" />
     <state x="-1160" y="313" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.830/-1920.-157.1920.1057@-1920.-157.1920.1057" timestamp="1619011535052" />
     <state x="-690" y="-82" width="1156" height="782" key="dock-window-1" timestamp="1619594143217">
       <screen x="-1920" y="-157" width="1920" height="1057" />
